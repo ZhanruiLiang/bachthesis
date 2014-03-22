@@ -1,0 +1,2 @@
+*.lo[fgt]
+*.{aux,bbl,blg,out}
