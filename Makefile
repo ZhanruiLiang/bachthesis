@@ -7,7 +7,7 @@ pass1:
 pass2: main.bbl
 	pdflatex main.tex
 
-main.bbl: pass1
+main.bbl: pass1 Bibliography.bib
 	bibtex main.aux
 
 .PHONY: pass1 pass2 view
