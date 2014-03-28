@@ -4,31 +4,56 @@
 \lhead{\emph{Introduction}}
 
 \section{Background}
-Guitar is a popular musical instrument that can be used perform a variety of musical genres.
-Typically, a guitar has 6 strings and 17 or more frets, dividing about 100 positions on it's fretboard.
-When each position is pressed by the player's left hand and the corresponding string is plucked by the right hand, a sound is produced.
+Guitar is a popular musical instrument that can be used to play a variety of musical genres.
+Typically, a guitar has 6 strings and 17 or more frets, dividing about 100 positions on its fretboard. In this these, we focus on the discussion on classical guitar.
+To produce sound with the guitar, one use the fingers on left hand to press a string to the bar on fretboard and pluck this string by right hand.
 Without special techniques, each position played by this manner will produce a sound with specific pitch.
 Different from the piano, which has a one-to-one correspondence between each pitch and each key on the keyboard, a sound with specific pitch can be produced on different positions on the guitar fretboard.
-From another point of view, a guitar can produce about only 50 level of pitches while it has about 100 positions, there must be some positions producing same pitch, though there may be difference in the sound effect.
 Therefore, we need to choose some proper positions for the notes that we want to play.
 
-Typical musical scores is written on the five line staff, from which we can know each note's pitch easily.
-However, few scores has fingering information. It's somewhat difficult for beginners to determine the proper position for each note on the score.
+Typical musical scores is written on the five-line staff, from which we can know each note's pitch easily.
+The five-line staff is not designed for string instruments so labeling fingering instructions on it
+can be cumbersome. For example, once the finger number is labeled around a note, there's no space left for labeling the fretboard position, and vice versa. Scores on many published books has finger names(p, i, m, a, representing four fingers of the left hand) labeled only on the first several measures. In many cases, knowing only the finger names is not enough to finish the fingering arrangement. To describe a complete fingering arrangement, we should assign a fretboard grid and a finger for each note. These make it not easy for beginners to figure out the proper fingering.
 
 Tablature is a form of musical score that solve this problem to some extent.
 It's widely used for string instruments.
 It adopt a different format to denote music, by telling which position(both string and fret) to use for each note, instead of telling the note's pitch.
-However, tablature is not always available, since many guitar pieces have only the score version, especially pieces for classical guitar.
+However, tablature is not always available. Many guitar pieces have only the score version, especially pieces for classical guitar.
 As \citep{constructing-system} mentioned, one reason for this is that once a guitar player become experienced enough, he/she don't need it that much.
 
-\section{Previous Works}
-% TODO
 \section{Objectives}
-% TODO
+The goal of this work is to present an environment for reading, listening and playing the guitar sheet music. Another goal is to provide a library that helps software developers process sheet music. All the source code in this work are open-sourced.
+
+\section{Previous Works}
+Sayegh \citep{sayegh1989fingering} proposed the ``optimum path paradigm'' and use dynamic programming on Viterbi network.
+Radisavljevic et al.\citep{radisavljevic2004path} proposed a ``path learning'' method to learn the cost function for dynamic programming, from marked data.
+
+D.Radicioni et al.\citep{radicioni2004segmentation} proposed a segment based method, which extended Sayegh's method by adding the segmentation feature.
+
+George et al.\citep{elkoura2003handrix} proposed a more complex model that takes the physical constraints of human hand and guitar fretboard into account. The model is then solved using a greedy algorithm.
+
+\citep{constructing-system} aims to provide a system of fingering arrangement and tablature generation for melodies. This system was designed for melodies, which don't support polyphony music very well.
+
 \section{Contribution}
-% TODO
+In this work, we present a sheet music parsing and rendering library and a global optimization fingering arrangement method that supports polyphony music. The final application can read data from MusicXML \citep{good2001musicxml} and then perform the following tasks:
+\begin{itemize}
+    \item Score rendering.
+    \item Tablature generation and rendering.
+    \item Sound playing.
+\end{itemize}
+
+The novelty of the present work, compared to the previous ones, is that it takes finger pressing, releasing and timing into consideration. The actual time needed for finger movement is considered in the cost functions. The previous works don't take the time between two successive notes into consideration. However, sometimes the timing is important. For example, when the time between two note is long, the player don't have to move the fingers too fast, so we can translate the burdens here in the final arrangement. Since our method is a global optimization method, it can take advantage from the consideration of timing.
+
+Unlike \citep{constructing-system}, the model we proposed for fingering arrangement is designed for polyphony music so than it can be used to nearly all classical pieces.
+
+
 \section{Structure of this Thesis}
-This thesis is divided into 3 main chapters.
-% TODO
-% Chapter 2 first introduces some basic concepts about sheet music and then discusses the processing of sheet music, including parsing, rendering and sound playing.
-% Chapter 3 presents the fingering arrangement problem.
+This thesis is divided into three main chapters.
+
+Chapter 2 describes different steps of the sheet processing procedure, from data parsing to the rendering. Finally, some rendering result are put at the end of this chapter.
+
+Chapter 3 is about sound playing. It also help the reader to understand the concept of note sequence, which is also used in Chapter 4.
+
+Chapter 4 first introduces the physical guitar model, and then propose an abstract model for fingering arrangement. It then solves the fingering arrangement problem by the dynamic programming technique. Optimizations are then proposed to improve the time performance of the main algorithm. At the end of this chapter, there are four arrangement results attached and analyzed.
+
+Appendix A lists the instructions for installing the application.

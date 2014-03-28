@@ -39,6 +39,7 @@
   \let\@this\@empty
   \if@tempswa \else \PassOptionsToClass{#1}{\baseclass}\fi
 }
+
 \@checkoptions{11pt}{{10pt}{11pt}{12pt}}
 \PassOptionsToClass{a4paper}{\baseclass}
 \ProcessOptions\relax
@@ -52,6 +53,7 @@
 \null\vfil
 %\vskip 60\p@
 \begin{center}{\huge\bf Declaration of Authorship\par}\end{center}
+% \begin{center}{\huge\bf 学术诚信声明\par}\end{center}
 %\vskip 60\p@
 {\normalsize #1}
 \vfil\vfil\null
@@ -183,7 +185,7 @@
 
 \thesistitle{Guitarist: a sheet music viewing and playing application for classical guitar learners} % Your thesis title - this is used in the title and abstract
 %-------------------------------------------------  
-\supervisor{Prof. Chenyin Gao} % You supervisor's name - this is used in the title page
+\supervisor{A.Prof. Chenying Gao} % You supervisor's name - this is used in the title page
 %-------------------------------------------------   
 \examiner{} % Your examiner's name - this is not currently used anywhere in the template, cite it with \examname if you want it
 %-------------------------------------------------   
@@ -195,7 +197,7 @@
 %-------------------------------------------------   
 \subject{} % Your subject area - this is not currently used anywhere in the template, cite it with \subjectname if you want it
 %-------------------------------------------------   
-\keywords{} % Keywords for your thesis - this is not currently used anywhere in the template, cite it with \keywordnames if you want it
+\keywords{guitar, sheet music, fingering arrangement, dynamic programming, rendering} % Keywords for your thesis - this is not currently used anywhere in the template, cite it with \keywordnames if you want it
 %-------------------------------------------------   
 \university{\texorpdfstring{\href{http://sysu.edu.cn} % Your university's URL
                 {Sun Yat-sen University}} % Your university's name - this is currently used in the title page
@@ -299,7 +301,7 @@
     \bigskip
     {\huge{\textit{Abstract}} \par}
     \bigskip
-    {\normalsize \facname \par} % Faculty name
+    % {\normalsize \facname \par} % Faculty name
     {\normalsize \deptname \par} % Department name
     \bigskip
     {\normalsize \degreename\par} % Degree name
@@ -375,6 +377,26 @@
     \cleardoublepage
 }\end{spacing}
 }
+% \usepackage{algorithm}
+% \renewcommand\listofalgorithms{
+% \btypeout{List of Algorithms}
+% \addtotoc{List of Algorithms}
+% \begin{spacing}{1}{
+%     \setlength{\parskip}{1pt}
+%     \if@twocolumn
+%       \@restonecoltrue\onecolumn
+%     \else
+%       \@restonecolfalse
+%     \fi
+%     \chapter*{\listalgorithmname
+%       \@mkboth{
+%           \MakeUppercase\listalgorithmname}{\MakeUppercase\listalgorithmname}}
+%     \@starttoc{loa}
+%     \if@restonecol\twocolumn\fi
+%     \cleardoublepage
+% }\end{spacing}
+% }
+% 
 \newcommand\listsymbolname{Abbreviations}
 \usepackage{longtable}
 \newcommand\listofsymbols[2]{

@@ -1,0 +1,27 @@
+\chapter{Summary}
+
+\label{Chapter:Summary}
+\lhead{\emph{Summary}}
+
+In the previous chapters, we described the most significant works in our application.
+
+The first problem we solved is
+rendering of sheet music. Scores are read from MusicXML file, which provide the necessary information for rendering.
+However, not all information is given directly. Some information are context relevant and some need to be inferred by
+conventional rules. 
+The most challenging part of the rendering problem is to determinate the slope and stacking for beams. It is solved b
+y sorting and iterating techniques. At last we got quite pleasing results.
+
+Having audio playback in musical applications is always helpful.
+The second problem we solved is playing sounds. The most important step is to generate the note sequence from the score.
+The generated note sequence is also used to solve the fingering arrangement problem. 
+
+The next problem we solved is the fingering arrangement problem. We proposed a expressive model and than used dynamic programming 
+to solve the problem. The most challenging part of this method is to calculate the cost functions. We set up essential rules to 
+formulate the calculation of cost functions. In the cost model we have several parameters that were unknown at the beginning. They 
+are found out by experiment later. The results we got are usually properly arranged and playable. However, they are not always the  
+same with the published version. It is due to that the rules in our cost model can not reflect some conventions.
+
+To further improve the work, we should add tie note and special playing techniques to the model.
+Special techniques such as hitting, picking and sliding may affect the fingering arrangement. Taking them into our model can improve
+the fingering arrangement result.

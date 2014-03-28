@@ -1,3 +1,26 @@
 \chapter{Setup Instruction}
 \label{Appendix:Setup-Instruction}
 \lhead{\emph{Setup Instruction}}
+
+Guitarist, the application, is written in the Python 3 language. The rendering engine is powered by OpenGL and sound playing is powered by the midi module in Pygame.
+
+The whole application is splited into three projects, namely: 
+\begin{itemize}
+    \item raygllib
+    \item pysheetmusic
+    \item guitarist
+\end{itemize}.
+
+And here's the third party library dependencies:
+\begin{itemize}
+    \item PyOpenGL
+    \item Pyglet
+    \item Pygame
+    \item Numpy
+    \item Cython
+\end{itemize}
+
+For now, the application has been tested on Linux only.
+To install, use \verb|pip install| or \verb|easy_install| to install the third party dependencies. Then, install \verb|raygllib| and \verb|pysheetmusic|, which are normal python packages.
+
+To run the application, just run the \verb|main.py| in project \verb|guitarist| as python script.
