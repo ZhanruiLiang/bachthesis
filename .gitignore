@@ -1,3 +1,10 @@
 *.lo[fgt]
-*.{aux,bbl,blg,out,toc,out}
+main.aux
+main.bbl
+main.blg
+main.toc
+main.out
+main.loa
 .*.sw[opn]
+*/*.aux
+Figures/*.pdf
